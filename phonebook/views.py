@@ -33,9 +33,9 @@ def detail(request, contact_id):
 def create_contact(request):
     form = ContactForm(request.POST or None)
 
-    form.instance.user = request.user
-
     if form.is_valid():
+        form.save(commit=False)
+        form.instance.user = request.user
         form.save()
         return redirect('phonebook:index')
 
@@ -48,6 +48,8 @@ def update_contact(request, contact_id):
     form = ContactForm(request.POST or None, instance=contact)
 
     if form.is_valid():
+        form.save(commit=False)
+        form.instance.user = request.user
         form.save()
         return redirect('phonebook:index')
 
