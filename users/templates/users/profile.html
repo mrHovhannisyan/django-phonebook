@@ -1,0 +1,19 @@
+{% extends 'phonebook/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1 class="mt-2">Welcome {{ user.username|upper }}</h1>
+    <hr class="mt-0 mb-4">
+
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+                <a href="{% url 'phonebook:index' %}">My Contacts</a>
+            </div>
+            <div>
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
+        </li>
+    </ul>
+{% endblock %}
