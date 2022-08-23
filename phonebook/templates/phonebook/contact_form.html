@@ -1,0 +1,25 @@
+{% extends 'phonebook/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1 class="mt-2">Add Contact</h1>
+    <hr class="mt-0 mb-4">
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-6">
+                {{ form.first_name|as_crispy_field }}
+            </div>
+            <div class="col-6">
+                {{ form.last_name|as_crispy_field }}
+            </div>
+        </div>
+        {{ form.company|as_crispy_field }}
+        {{ form.email|as_crispy_field }}
+        {{ form.address|as_crispy_field }}
+        {{ form.phone_number|as_crispy_field }}
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+{% endblock %}

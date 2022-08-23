@@ -1,0 +1,29 @@
+{% extends 'phonebook/base.html' %}
+
+{% block content %}
+    <h1 class="mt-2">My Contacts</h1>
+    <hr class="mt-0 mb-4">
+
+    <form class="input-group mb-3">
+        <input type="search" name="contact_name" placeholder="Search for contacts"
+               class="form-control borderless">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+    </form>
+
+    <ul class="list-group">
+        {% for contact in contacts %}
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <a href="{% url 'phonebook:detail'  contact.id %}" class="text-dark">
+                    {{ contact.first_name }} {{ contact.last_name }}
+                </a>
+                <div>
+                    <a href="{% url 'phonebook:update_contact' contact.id %}" class="mr-2">Edit</a>
+                    <a href="{% url 'phonebook:delete_contact' contact.id %}" class="text-danger">Delete</a>
+                </div>
+            </li>
+
+        {% endfor %}
+    </ul>
+{% endblock %}
