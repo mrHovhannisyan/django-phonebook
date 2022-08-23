@@ -10,6 +10,7 @@ psycopg2-binary = "*"
 django-crispy-forms = "*"
 
 [dev-packages]
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.8"
