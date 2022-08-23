@@ -36,3 +36,13 @@ def update_contact(request, contact_id):
         return redirect('phonebook:index')
 
     return render(request, 'phonebook/contact_form.html', {'form': form})
+
+
+def delete_contact(request, contact_id):
+    contact = Contact.objects.get(pk=contact_id)
+
+    if request.method == 'POST':
+        contact.delete()
+        return redirect('phonebook:index')
+
+    return render(request, 'phonebook/delete.html', context={'contact': contact})

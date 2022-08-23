@@ -6,7 +6,16 @@
 
     <ul class="list-group">
         {% for contact in contacts %}
-            <li class="list-group-item">{{ contact.first_name }} {{ contact.last_name }}</li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <a href="{% url 'phonebook:detail'  contact.id %}">
+                    {{ contact.first_name }} {{ contact.last_name }}
+                </a>
+                <div>
+                    <a href="{% url 'phonebook:update_contact' contact.id %}">Edit</a>
+                    <a href="{% url 'phonebook:delete_contact' contact.id %}">Delete</a>
+                </div>
+            </li>
+
         {% endfor %}
     </ul>
 {% endblock %}
