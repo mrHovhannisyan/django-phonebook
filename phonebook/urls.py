@@ -5,5 +5,7 @@ from phonebook import views
 app_name = 'phonebook'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('add', views.phonebook, name='create_contact'),
+    path('<int:contact_id>', views.detail, name='detail'),
+    path('add', views.create_contact, name='create_contact'),
+    path('update/<int:contact_id>', views.update_contact, name='update_contact'),
 ]
