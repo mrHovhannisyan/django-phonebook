@@ -43,7 +43,7 @@ Set up the database
 Create a superuser
 
 ```shell script
-./manage.py createsuperuser --noinput
+./manage.py createsuperuser
 ```
 
 Start the application locally
