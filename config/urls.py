@@ -1,9 +1,7 @@
 from django.contrib import admin
-from django.urls import path
-
-from phonebook.views import phonebook
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('phonebook/', phonebook, name='phonebook'),
+    path('phonebook/', include('phonebook.urls')),
 ]

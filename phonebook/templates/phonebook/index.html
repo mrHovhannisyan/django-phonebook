@@ -1,0 +1,12 @@
+{% extends 'phonebook/base.html' %}
+
+{% block content %}
+    <h1 class="mt-2">Contacts</h1>
+    <hr class="mt-0 mb-4">
+
+    <ul class="list-group">
+        {% for contact in contacts %}
+            <li class="list-group-item">{{ contact.first_name }} {{ contact.last_name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
