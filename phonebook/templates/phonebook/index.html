@@ -1,11 +1,8 @@
 {% extends 'phonebook/base.html' %}
 
 {% block content %}
-    <h1 class="mt-2">Contacts</h1>
+    <h1 class="mt-2">My Contacts</h1>
     <hr class="mt-0 mb-4">
-    <div class="text-center py-2 pr-2">
-        <a href="{% url 'phonebook:create_contact' %}" class="text-success font-weight-bold">Add contact</a>
-    </div>
 
     <form class="input-group mb-3">
         <input type="search" name="contact_name" placeholder="Search for contacts"

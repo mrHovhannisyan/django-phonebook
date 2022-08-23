@@ -8,6 +8,17 @@
         <title>Phonebook</title>
     </head>
     <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a href="{% url 'phonebook:index' %}" class="navbar-brand">Phonebook</a>
+
+            <div class="navbar">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'phonebook:create_contact' %}" class="nav-item nav-link">Add Contact</a>
+                    <a href="{% url 'profile' %}" class="nav-item nav-link">Profile</a>
+                    <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
+                {% endif %}
+            </div>
+        </nav>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-8">

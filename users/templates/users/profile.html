@@ -6,14 +6,21 @@
     <h1 class="mt-2">Welcome {{ user.username|upper }}</h1>
     <hr class="mt-0 mb-4">
 
-    <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <div>
-                <a href="{% url 'phonebook:index' %}">My Contacts</a>
-            </div>
-            <div>
-                <a href="{% url 'logout' %}">Logout</a>
-            </div>
-        </li>
-    </ul>
 {% endblock %}
+
+    <nav class="navbar navbar-expand-sm bg-light">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'phonebook:index' %}" class="nav-link">My Contacts</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav justify-content-right">
+            <li class="nav-item">
+                <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
